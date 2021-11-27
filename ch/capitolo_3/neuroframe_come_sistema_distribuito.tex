@@ -1,0 +1,56 @@
+\section{NeuroFrame come sistema distribuito}
+Andrew S. Tanenbaum e Marteen Van Steen nel loro libro \emph{"Sistemi distribuiti"}, definiscono ciò che dà titolo al loro trattato come segue:\newline
+\begin{quotation}
+    \emph{"Un {\bf sistema distribuito} è una collezione di computer indipendenti che appare ai propri utenti come un singolo sistema coerente \cite{sistema_distribuito}."}
+\end{quotation}
+Dalla \emph{sezione 2.2.2}, dove vengono descritti i sottosistemi coinvolti, è già possibile intuire che la natura di NeuroFrame è prettamente quella di un sistema distribuito; ogni sottosistema descritto difatti opera su di un calcolatore indipendente in un rapporto di collaborazione con le altre entità perpetrato scambiando messaggi su interfacce di comunicazione definite.\newline
+
+\noindent Dal punto di vista degli utenti finali l'Applicativo di registrazione e l'Applicativo Dashboard operano coerentemente in un rapporto causa-effetto, partendo dalla lettura di un segnale neurale fino alla visualizzazione di tale segnale elaborato come metrica di stato cognitivo nella Dashboard di controllo.\newline
+
+\noindent Impostato NeuroFrame come sistema distribuito, è possibile introdurre due concetti collegati e che definiscono la natura del servizio:
+\begin{itemize}
+    \item La filosofia alla base della piattaforma Atlas, i {\bf microservizi}.
+    \item La modalità con la quale il cliente finale può fruire del servizio, la metodologia {\bf software as a service}.
+\end{itemize}
+\vspace{5mm}
+\subsection{Microservizi}
+Come introdotto nella \emph{sezione 1.3}, la piattaforma Atlas (\emph{figura 1.4}) è composta dal NeuroServer (server con il compito di gestire l'invio dei messaggi in entrata ed in uscita) e dagli Algorithm Packages.\newline
+
+\noindent Rivolgendo l'attenzione ai pacchetti degli algoritmi troviamo:
+\begin{itemize}
+    \item \emph{MindFeel}
+    \item \emph{MindPulse}
+    \item \emph{MindPrint}
+\end{itemize}
+\noindent In particolare, all'interno del sistema NeuroFrame, l'elaborazione delle metriche è resa possibile solamente grazie allo sviluppo dell'algoritmo MindPulse; analogamente, in altri progetti aziendali, i restanti algoritmi sono alla base del servizio offerto.\newline
+
+\noindent Questa suddivisione in unità il più possibili atomiche e semplici corrisponde ad un {\bf approccio a microservizi} \cite{microservizi}.\newline
+
+\noindent L'architettura a microservizi punta a creare una collezione di servizi che siano quanto più possibile:
+\begin{itemize}
+    \item \emph{manutenibili e testabili}
+    \item \emph{debolmente dipendenti l'uno con l'altro}
+    \item \emph{distribuibili indipendentemente}
+    \item \emph{organizzati seguendo il valore di business che il servizio vuole offire}
+    \item \emph{gestiti da piccoli team}
+\end{itemize}
+
+\noindent I microservizi sviluppati poi possono essere facilmente integrati in progetti più grandi che ne sfruttano le feature implementate.\newline
+
+\noindent Il microservizio dell'algoritmo MindPulse, reso accessibile attraverso NeuroServer, ben si sposa all'interno del sitema distribuito NeuroFrame ed offre il vantaggio di essere riutilizzabile in qualsiasi progetto futuro essendo difatti l'elaborazione delle metriche totalmente svincolata da NeuroFrame.\newline
+
+\noindent L'indipendenza degli algoritmi dai servizi che ne richiedono l'elaborazione dati è data dalla caratteristica per cui l'unico requisito necessario per il funzionamento di un algoritmo è fornire un input da elaborare e trasformare in output, indipendentemente da chi fornisca tali dati.
+\subsection{Software as a service}
+L'essere un sistema distribuito e la volontà (espressa nella \emph{sezione 2.1.3}) di rendere gli applicativi utente fruibili tramite applicazioni web, rende NeuroFrame adatto ad una commercializzazione come {\bf software as a service}.
+\begin{quote}
+    \emph{"Software-as-a-Service (SaaS) è un modello di licenza e distribuzione utilizzato per fornire applicazioni software su Internet - dunque come servizio \cite{SaaS}."}
+\end{quote}
+\noindent Questa volontà era stata già sottointesa nell'analisi orientata agli oggetti (\emph{sezione 2.2.4}), dove per ogni Organizzazione è necessario memorizzare la licenza acquistata (con degli effetti sul servizio dipendenti dalla scelta del tipo di licenza).\newline
+
+\noindent Già nei primi anni '60 l'idea di centralizzare l'hoisting di servizi aveva preso forma in quello che era al tempo denominato {\bf Application server provider} (\emph{ASP}).\newline
+
+\noindent Con l'evolversi delle infrastrutture tecnologiche della rete ed una conseguente diffusione di essa, anche in contesti diversi da quelli aziendali, il software as a service è diventato un modo estremamente diffuso di fruire di servizi informatici.\newline
+
+\noindent Si pensi semplicemente, in ambiente consumer, a servizi quali Netflix, Spotify, Amazon Prime, ecc...\newline
+
+\noindent Ciò che ha reso vincente questo approccio è l'alta scalabilità, derivante dall'estrema semplicità di fruizione dei servizi; infatti, essendo diffusi tramite web, tali servizi non nececessitano di un'installazione locale. Grazie a ciò risultano facili e veloci da utilizzare per qualsiasi target di utenza.

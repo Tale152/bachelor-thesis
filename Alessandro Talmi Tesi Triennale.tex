@@ -1,0 +1,43 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[italian]{babel}
+\usepackage{newlfont}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{dirtree}
+\usepackage[sorting=none,backend=bibtex]{biblatex}
+\addbibresource{ch/bibliografia.bib}
+\newcommand\myemptypage{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage
+}
+\textwidth=450pt\oddsidemargin=0pt
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\begin{document}
+
+\input{ch/TitlePage.tex}
+
+% \myemptypage
+\pagenumbering{Roman}
+\tableofcontents
+\addtocontents{toc}{~\hfill\textbf{Pagina}\par}
+\clearpage
+\pagenumbering{arabic}
+\input{ch/introduzione.tex}
+\input{ch/capitolo_1/capitolo_1.tex}
+\input{ch/capitolo_2/capitolo_2.tex}
+\input{ch/capitolo_3/capitolo_3.tex}
+\input{ch/capitolo_4/capitolo_4.tex}
+\input{ch/capitolo_5/capitolo_5.tex}
+\input{ch/considerazioni_finali.tex}
+\addcontentsline{toc}{chapter}{Bibliografia} 
+\printbibliography
+\input{ch/ringraziamenti.tex}
+
+\end{document}

@@ -1,0 +1,33 @@
+\section{Aspetti critici dell'applicativo Dashboard}
+Lo natura di questo applicativo pone davanti a delle problematiche e a conseguenti decisioni durante lo sviluppo.\newline
+Alcune problematiche risultano \emph{legate intrinsecamente alla tecnologia implementativa}, cioè lo sviluppo di una soluzione che fa uso di tecnologie web (come specificato nei requisiti Should have \emph{sezione 2.1.3}) piuttosto che un applicativo nativo.\newline
+Altre problematiche d'altro canto derivano da scelte \emph{legate alla user experience}.\newline
+Segue una descrizione dei principali aspetti critici affrontati.
+\subsection{Risorse computazionali limitate dei browser}
+Scegliendo un approccio web piuttosto che un'applicazione nativa otteniamo un impoverimento dell'efficienza di calcolo, aggiungendo un layer extra tra l'applicativo e le risorse della macchina che lo eseguirà: il browser.\newline
+Le prestazioni dell'applicazione dunque non saranno influenzate solamente dalla capacità di calcolo della macchina, ma anche dall'ottimizzazione del browser, le risorse che il sistema operativo concederà ad esso e da fattori non predicibili (come limitazioni imposte dal browser stesso o un alto numero di schede aperte nel browser).\newline
+\emph{Al costo di una maggiore scalabilità e una compatibilità con un vasto parco dispositivi dunque si ottiene una riduzione delle performance che vincola ad uno sviluppo il più possibile ottimizzato}.
+\subsection{Gestione di grandi quantità di dati}
+\emph{La quantità di dati che descrivono l'evolversi dello stato cognitivo di una persona nel tempo presentano un volume e una densità molto elevati}, in quanto l'hardware che legge gli impulsi neurali (il caschetto Muse) effettua campionamenti del segnale con un periodo molto basso.\newline
+Questa problema diventa ancora più preponderante all'aumentare del numero di componenti di un team.\newline
+Risulta quindi necessario agire su più fronti:
+\begin{itemize}
+  \item
+  {\emph{Ottimizzare al massimo gli algoritmi di processing dei dati nella dashboard}, così da processare velocemente i dati prima di richiedere al database un nuovo aggiornamento}
+  \item
+  {\emph{Ottimizzare le query di richiesta dati lanciate dalla dashboard verso il database}, al fine di ridurre il più possibile il tempo impiegato dal database ad eseguire la ricerca e per minimizzare la quantità di dati inviati nella rete}
+  \item
+  {\emph{Limitare il numero massimo di componenti di un team}}
+  \item
+  {\emph{Limitare se necessario la frequenza con cui l'app di acquisizione invia i dati alla piattaforma per l'elaborazione} scegliendo un buon compromesso tra accuratezza dei dati e performance}
+\end{itemize}
+\subsection{Rendering dei grafici}
+Questa problematica risulta strettamente correlata alla precedente.\newline 
+Mentre in precedenza il problema verteva maggiormente sui calcoli effettuati in locale sui dati ricevuti, qui si vuole sottolineare come \emph{il rendering dei grafici risulti molto oneroso computazionalmente}.\newline
+Risulta quindi fondamentale un'\emph{ottimizzazione nella struttura e negli algoritmi che coinvolgono i dati utili al rendering}.
+\subsection{Design vertically constrained}
+La user interface che si occupa di mostrare i dati all'utente (la schermata dashboard) risulta vincolata da un requisito importante per l'efficacia pratica del sistema e per l'esperienza utente: \emph{al fine di permettere al team manager di poter interpretare velocemente la condizione del team è necessario che la maggior parte dei dati utili sia sempre visibile a schermo}.\newline
+Questo ci porta ad avere delle costrizioni verticali (in altri termini tutto il contenuto verticale della pagina deve essere contenuto a schermo).\newline
+Le tecnologie in ambito web utilizzano come punto di riferimento l'asse orizzontale della pagina, forti del fatto di poter estendere la pagina verticalmente potenzialmente all'infinito per poter rappresentare il contenuto.\newline
+Risultano dunque necessarie delle soluzioni ad hoc per soddisfare il requisito preposto.\newline
+In particolare, si è optato per tenere sempre visibili a schermo la barra delle opzioni, l'area dei singoli utenti e l'area del team nel complesso. Essendo il numero di componenti del team imprevedibile a priori, si è scelto di far scrollare verticalmente il contenuto dell'area degli utenti.

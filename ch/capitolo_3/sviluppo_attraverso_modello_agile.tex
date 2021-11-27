@@ -1,0 +1,35 @@
+\vspace{10mm}
+\section{Sviluppo attraverso un modello Agile}
+Quanto affrontato fin ora segue una metodologia di sviluppo chiamata {\bf modello Agile}.\newline
+Questa metodologia di lavoro poggia le sue fondamenta nei principi dell'antecedente scuola dell'{\bf eXtreme programming}.\newline
+
+\noindent La filosofia proposta dal modello Agile è, a mio avviso, ben riassunta in questo estratto:
+
+\begin{quotation}
+    \emph{"The keys to modeling success are to have effective communication between all project stakeholders, to strive to develop the simplest solution possible that meets all of your needs, to obtain feedback regarding your efforts often and early, to have the courage to make and stick to your decisions, and to have the humility to admit that you may not know everything, that others have value to add to your project efforts" \cite{agile}.}
+\end{quotation}
+
+\noindent Traducendo questi principi in azioni concrete risulta fondamentale {\bf un'attenta modellazione e documentazione del lavoro}; il processo di modellazione e sviluppo va intrapreso tenendo a mente un {\bf approccio incrementale} che si sviluppa in iterazioni più o meno numerose.\newline
+
+\noindent In modo particolare risulta necessario produrre un'ingente quantità di {\bf artefatti} (schemi, diagrammi, ecc...) per cogliere anzitempo gli aspetti più complessi ed evitare di incappare in gravi errori una volta giunti alle fasi successive.\newline
+Gran parte dei rallentamenti nei lavori e conseguenti costi aggiuntivi sono dovuti ad una progettazione molto sommaria.\newline
+
+\noindent Di contro però, proprio per via della natura iterativa di questa metodologia, è fondamentale progettare un sistema preposto a futuri cambiamenti e di facile espandibilità; bisogna dunque evitare il fenomeno opposto alla sommarietà: l'{\bf overfitting}.\newline
+Durante il processo è necessario ottenere quanto più {\bf feedback} possibile da utenti target che utilizzeranno il servizio.\newline
+
+\noindent Nonostante questa sia ancora la prima iterazione del progetto, Vibre ha già effettuato lavori di confronto con la clientela interessata a NeuroFrame al fine di ottenere feedback utili, in particolare è stata presentata al cliente una {\bf Proof Of Concept} (POC) sulla cui base sono stati dati feedback e proposte potenziali features, fra queste per esempio è emersa la necessità di un sistema di allarme in caso un soggetto dia segni di comportamenti anomali (affaticamento prolungato, sonnolenza, stress per lunghi periodi di tempo...).\newline
+
+\noindent Sono stati anche svolti degli incontri con un pilota professionista di auto sportive immerso nel contesto di un simulatore di guida; l'obiettivo è stato, oltre che la costruzione del prodotto, la validazione delle metriche contestualizzate a un caso d'uso specifico e reale.\newline
+
+\noindent Un'altra azione pratica da intraprendere, di particolare importanza durante le prime iterazioni, è {\bf mantenere il sistema semplice}, andando a ricercare solo le feature core che si vogliono offrire agli utenti; per questa ragione non tutte specifiche elencate nella \emph{sezione 2.1} risulteranno implementate al momento, in modo particolare in riferimento all'applicativo Dashboard, focus della mia esperienza di tirocinio in azienda.
+
+\vspace{5mm}
+
+\subsection{Feature ricercate nella versione base del sistema durante la mia esperienza di tirocinio}
+Dati i principi discussi nella sezione precedente, la natura del progetto e la mole di lavoro che esula enormemente dall'ammontare ore di questa esperienza di tirocinio, {\bf abbiamo scelto di concentrare i nostri sforzi nei requisiti di sistema definiti come Must have} (\emph{sezione 2.1.2}).\newline
+
+\noindent In modo particolare i miei sforzi lavorativi sono stati volti verso la {\bf realizzazione dell'applicativo Dashboard}, tenendo a mente le prospettive di futura evoluzione del progetto creando un sistema il quanto più possibile preposto a soddisfare facilmente i requisiti di sistema secondari non implementati in questa versione base.\newline
+
+\noindent Come vedremo più avanti, {\bf tutti i requisiti must have relativi alla Dashboard hanno trovato la loro realizzazione}, ottenendo un prodotto le cui funzionalità core sono già operative.\newline
+
+\noindent Data la momentanea assenza di un applicativo di acquisizione sviluppato e il continuo raffinamento degli algoritmi neurali all'interno della piattaforma Atlas, per completare e validare il mio lavoro ho inoltre implementato un {\bf simulatore esterno} al fine di poter verificare il funzionamento di quanto da me sviluppato; l'argomento simulatore verrà affrontato nel \emph{capitolo 5}.

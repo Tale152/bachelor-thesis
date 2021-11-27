@@ -1,0 +1,78 @@
+\section{Analisi dei requisiti del sistema}
+Analizziamo ora quali requisiti il sistema deve soddisfare.\newline
+L'approccio scelto mette al centro le {\bf user stories}, cioè funzionalità che l'utente finale deve poter trovare nel prodotto.\newline
+Ogni user story quindi è identificabile come un {\bf task} da completare.\newline
+
+\noindent Non tutti i task però hanno pari importanza, specialmente nell'ottica della prototipazione e della graduale crescita delle feature del prodotto.\newline
+Occorre quindi stabilire quali siano le feature base ricercate alla prima release del prodotto ma, contemporaneamente, tenere a mente feature future per creare un sistema già predisposto ad implementarle.\newline
+Per questa ragione è stato scelto il metodo di prioritizzazione {\bf MoSCoW}.
+\subsection{Prioritizzazione tramite metodo MoSCoW}
+La metodologia MoSCoW è una tecnica di {\bf prioritizzazione} molto usata nell'analisi di sistemi informatici.\newline
+
+\noindent Le lettere maiuscole dell'acronimo simboleggiano le 4 categorie fornite da questo metodo per la suddivisione della priorità e il conseguente impiego di risorse umane, economiche e temporali:
+\begin{itemize}
+  \item {\bf Must have}
+  \item {\bf Should have}
+  \item {\bf Could have}
+  \item {\bf Won't have} (o, alternativamente, \emph{Wish})
+\end{itemize}
+
+\noindent Questa metodologia è stata creata dallo sviluppatore software \emph{Dai Clegg} e, successivamente, donata al Dynamic Systems Development Method (\emph{DSDM}).\newline
+Inizialmente MoSCow fu concepito come un framework di prioritizzazione per sviluppo di applicazioni in tempi brevi; oggi tuttavia, grazie alla popolarità acquisita, il metodo è stato ampliato per gestire varie tipologie di progetto \cite{moscow}.
+\subsection{Must have}
+Attraverso i Must have viene identificato il {\bf Minimum Usable Subset} (\emph{MUS}), cioè le feature minime che il progetto deve obbligatoriamente soddisfare per essere considerato fruibile.\newline
+È qui che vengono specificati i task con la {\bf massima priorità} e dove vengono spesi, almeno inizialmente, maggiore tempo e risorse.\newline
+
+\noindent Per il sistema NeuroFrame sono stati identificati i seguenti must have:
+\begin{itemize}
+    \item \emph{Monitoraggio real-time del carico cognitivo di ogni persona}\\
+    {Dev'essere possibile valutare in tempo reale il carico cognitivo di ogni singolo componente del team.}
+    \item \emph{Dashboard del team dove il team manager può osservare l'andamento di tutti i monitorati}\\
+    {Deve esistere una sezione della Dashboard che esprima facilmente lo stato cognitivo dell'intero team. \vspace{5mm}}
+    \item \emph{Ogni utente ha la propria applicazione che usa in autonomia per far partire la registrazione}\\
+    {La possibilità di un utente all'interno di un team di inviare dati dev'essere totalmente indipendente dallo stato dei team manager o degli altri componenti del team.}
+    \item \emph{Signup/login integrato per gli utenti monitorati}\\
+    {Ogni utente monitorato facente parte di un team possiede le proprie credenziali aziendali attraverso le quali effettuare il login nella propria istanza dell'applicativo di registrazione.}
+    \item \emph{Ogni utente deve essere sottoposto ad una fase di calibrazione}\\
+    {Al fine di ottenere delle metriche significative per l'individuo il dispositivo di calibrazione necessita di una fase di calibrazione.}
+    \item \emph{Il team manager deve poter effettuare un login sulla dashboard}\\
+    {Ogni team manager deve avere le proprie credenziali aziendali attraverso le quali effettuare login al fine di poter accedere ai vari team presenti in azienda.}
+\end{itemize}
+\subsection{Should have}
+I task definiti come Should have ricoprono molta importanza all'interno di un progetto ma {\bf non sono essenziali al funzionamento del sistema} e al rilascio di una prima versione; hanno dunque una priorità inferiore rispetto ad i Must have.\newline
+È dunque qui che vengono specificati {\bf miglioramenti delle performance}, {\bf miglioramenti strutturali} o {\bf feature future}.\newline
+
+\noindent I Should have identificati sono i seguenti:
+\begin{itemize}
+  \item \emph{Storico degli andamenti}\\
+  {La possibilità per i team manager di visionare i dati cognitivi di registrazioni passate dei membri di un team.}
+  \item \emph{Tutte le applicazioni dovrebbero essere web app}\\
+  {Implementare gli applicativi utilizzati da utenti e team manager al fine di aumentare la scalabilità del prodotto ed ottenere la massima compatibilità con il maggior numero possibile di dispositivi.}
+  \item \emph{Possibilità di gestione on-premise}\\
+  {Alternativamente a quanto specificato del task precedente, si vuole offrire la possibilità di utilizzare il servizio con applicativi installati nelle macchine del cliente.}
+\end{itemize}
+\subsection{Could have}
+Scendendo ulteriormente nel grado di priorità troviamo gli Should have.\newline
+Essi non sono necessari al funzionamento del sistema ma, rispetto agli Should have, {\bf hanno un impatto notevolmente minore nelle funzionalità offerte dal prodotto finito}.\newline
+Generalmente nella creazione di un prodotto sono i primi ad essere scartati e/o rimandati nel caso Must have e Should have si rivelino avere costi e tempistiche maggiori rispetto a quanto preventivato.\newline
+
+\noindent Sono stati individuati due task appartenenti a questa categoria:
+\begin{itemize}
+  \item \emph{Possibilità di centralizzare le registrazioni per il manager}\\
+  {Consentire ad un team manager una forma di controllo sulle registrazioni dei membri del team (ad esempio fermandole o facendole partire).}
+  \item \emph{Possibilità di esportare gli storici}\\
+  {Espandendo il task riguardante la possibilità di visionare lo storico degli andamenti si vuole offrire al cliente la capacità di esportare tali storici.}
+\end{itemize}
+\subsection{Won't have}
+Troviamo infine i task definiti come Won't have o, come accennato alla \emph{sezione 2.1.1}, i Wish.\newline
+Ciò che viene posto in questa categoria detiene il {\bf grado di priorità più basso possibile} e rappresenta idee emerse in corso d'opera sulla cui fattibilità e valore verrà discusso in futuro.\newline
+
+\noindent NeuroFrame propone questi Wish:
+\begin{itemize}
+  \item \emph{Dashboard del singolo utente}\\
+  {La possibilità di avere una dashboard dedicata all'utilizzo di "team" composti solo da una persona.}
+  \item \emph{Andamento real-time sull'applicazione dell'utente}\\
+  {Offrire la possibilità al membro di un team di visualizzare il proprio benessere cognitivo all'interno della propria istanza dell'applicazione di registrazione.}
+  \item \emph{Test psicometrici di affaticamento e stato di flow, confrontati in maniera automatica con le misurazioni}\\
+  {La prospettiva di includere test psicometrici volti a valutare la propensione all'affaticamento di un individuo e la sua capacità di raggiungere lo stato di flow (\emph{sezione 1.1}).}
+\end{itemize}
