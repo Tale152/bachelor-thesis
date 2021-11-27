@@ -1,15 +1,11 @@
-# Bachelor thesis
+# General info
 My bachelor studies in [Computer Science and Engineering](https://corsi.unibo.it/1cycle/ComputerScienceEngineering) at [University of Bologna](https://www.unibo.it/en) started in **September 2017** and concluded in **October 2020** with a final graduation of **100/110**.
 
-This repositoy contain the source **LaTeX** code used to create my **bachelor thesis**.
-
-# General info
+This repositoy contain the source **LaTeX** code used to create my **bachelor thesis**.  
 You can **download** the compiled PDF in the [releases section of this repository](https://github.com/Tale152/bachelor_thesis/releases) or using [University of Bologna's Theses Repository](https://amslaurea.unibo.it/21607/).  
+The code in this repository was moved from a previous Bitbucket repository. 
 
 Due to the fact that my studies were conducted in an italian university, this thesis is written in **italian**.  
-
-The code in this repository was moved from a previous Bitbucket repository.  
-
 The project that this thesis describes cannot be found publically because it is owned by the company that hosted this work.
 
 # Thesis
